@@ -41,13 +41,13 @@ workflow {
             tuple(
                 row.sample_id,
                 row.batch_id,
-                file(row.read1, checkIfExists: true),
-                file(row.read2, checkIfExists: true)
+                [file(row.read1, checkIfExists: true),
+                file(row.read2, checkIfExists: true)]
             )
         }
 
     // ── 2. Per-batch: trim ────────────────────────────────────────────────────
-    // FASTP input : [sample_id, batch_id, r1, r2]
+    // FASTP input : [sample_id, batch_id, [r1, r2]]
     // FASTP output: reads → [sample_id, batch_id, r1_trimmed, r2_trimmed]
     trimmed = FASTP(ch_reads)
 
