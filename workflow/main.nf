@@ -85,7 +85,7 @@ workflow {
     ch_to_cooler = final_pairs.pairs
         .groupTuple(by: 0)
 
-    mcools = COOLER(ch_to_cooler)          // chrom_sizes not needed —
+    mcools = COOLER(final_pairs.pairs, ch_chrom_sizes)          // chrom_sizes 
     JUICER(final_pairs.pairs, ch_chrom_sizes)   // cooler reads genome from params
 
     // ── 7. QC ─────────────────────────────────────────────────────────────────
