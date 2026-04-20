@@ -12,6 +12,8 @@ data/
 results/
 logs/
 tmp/
+.nextflow/
+.nextflow.*
 
 # Conda / environments
 .env/
