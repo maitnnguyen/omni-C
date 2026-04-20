@@ -91,5 +91,5 @@ workflow {
     // ── 7. QC ─────────────────────────────────────────────────────────────────
     // COOLTOOLS_SCALING takes the mcool output, not the pairs file.
     // chrom_sizes not needed by cooltools — it reads bin structure from mcool.
-    COOLTOOLS_SCALING(mcools.mcool)
+    COOLTOOLS_SCALING(mcools.mcool, ch_chrom_sizes)
 }
