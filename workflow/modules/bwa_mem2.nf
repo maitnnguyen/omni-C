@@ -21,6 +21,8 @@ process BWA_MEM2 {
     def prefix = "${sample_id}_${batch_id}"
     def rg     = "@RG\\tID:${prefix}\\tSM:${sample_id}\\tLB:${sample_id}\\tPU:${batch_id}\\tPL:ILLUMINA"
     """
+    module load SAMtools/1.18-GCC-12.3.0
+    
     bwa-mem2 mem \\
         -5SP \\
         -t ${task.cpus} \\
