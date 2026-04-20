@@ -1,5 +1,5 @@
 process COOLER {
-    tag "${sample_id}"
+    tag "${sample_id} (${params.genome})"
     label 'process_high'
 
     publishDir "${params.outdir}/cooler/${sample_id}", mode: 'copy'

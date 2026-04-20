@@ -1,5 +1,5 @@
 process BWA_MEM2 {
-    tag "${sample_id}/${batch_id}"
+    tag "${sample_id}/${batch_id} (${params.genome})"
     label 'process_high'
 
     // scratch + index: only safe if your cluster config stages inputs to scratch.

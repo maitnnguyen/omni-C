@@ -1,7 +1,7 @@
 // modules/cooltools.nf
 
 process COOLTOOLS_SCALING {
-    tag "${sample_id}"
+    tag "${sample_id} (${params.genome})"
     label 'process_medium'
 
     publishDir "${params.outdir}/qc/${sample_id}", mode: 'copy'

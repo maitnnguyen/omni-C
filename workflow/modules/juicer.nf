@@ -1,7 +1,7 @@
 // modules/juicer.nf
 
 process JUICER {
-    tag "${sample_id}"
+    tag "${sample_id} (${params.genome})"
     label 'process_high'
 
     publishDir "${params.outdir}/hic/${sample_id}", mode: 'copy'

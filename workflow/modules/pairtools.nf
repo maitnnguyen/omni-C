@@ -1,7 +1,7 @@
 // modules/pairtools.nf
 
 process PAIRTOOLS_PARSE {
-    tag "${sample_id}/${batch_id}"
+    tag "${sample_id}/${batch_id} (${params.genome})"
     label 'process_high'
 
     input:
@@ -38,7 +38,7 @@ process PAIRTOOLS_PARSE {
 
 
 process PAIRTOOLS_MERGE_DEDUP {
-    tag "${sample_id}"
+    tag "${sample_id} (${params.genome})"
     label 'process_high'
     // Sorting + dedup across merged batches is the most RAM/disk-intensive step
     // Label this 'process_high' and allocate accordingly in your config
