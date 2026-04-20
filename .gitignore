@@ -5,10 +5,13 @@
 # Python
 __pycache__/
 *.pyc
+*.log
 
 # Data (usually large)
 data/
 results/
+logs/
+tmp/
 
 # Conda / environments
 .env/
