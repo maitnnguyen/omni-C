@@ -82,7 +82,10 @@ workflow {
     // ── 6. Matrix generation ──────────────────────────────────────────────────
     // Both tools consume the same final merged+deduped pairs per sample.
     // Access the named emit (.pairs) — without it you get the full output set.
-    mcools = COOLER(final_pairs.pairs)          // chrom_sizes not needed —
+    ch_to_cooler = final_pairs.pairs
+        .groupTuple(by: 0)
+
+    mcools = COOLER(ch_to_cooler)          // chrom_sizes not needed —
     JUICER(final_pairs.pairs, ch_chrom_sizes)   // cooler reads genome from params
 
     // ── 7. QC ─────────────────────────────────────────────────────────────────
