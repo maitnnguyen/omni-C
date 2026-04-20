@@ -1,6 +1,6 @@
 process FASTP {
-    tag "${sample_id}/${batch_id}"              // Show both IDs in log — much
-    label 'process_medium'                      // more useful when debugging
+    tag "${sample_id}/${batch_id} (${params.genome})"              // Show both IDs in log — much
+    label 'process_high'                      // more useful when debugging
 
     publishDir "${params.outdir}/fastp/${sample_id}", mode: 'copy',
         saveAs: { fn -> fn.endsWith('.fastq.gz') ? null : fn }
