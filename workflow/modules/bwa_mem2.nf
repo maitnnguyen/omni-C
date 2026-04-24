@@ -27,8 +27,7 @@ process BWA_MEM2 {
         -R "${rg}" \\
         ${index_prefix} \\
         ${r1} \\
-        ${r2} \\
-    | samtools view \\
+        ${r2} | samtools view \\
         -bS \\
         -@ ${task.cpus} \\
         -o ${prefix}.bam \\
