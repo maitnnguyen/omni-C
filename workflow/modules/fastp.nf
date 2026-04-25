@@ -30,6 +30,7 @@ process FASTP {
         --detect_adapter_for_pe \\
         --correction \\
         --low_complexity_filter \\
+        --disable-igzip \\
         --thread ${task.cpus} \\
         --qualified_quality_phred 20 \\
         --length_required 30 \\
